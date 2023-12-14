@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RemindNotes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/primaryDark</item>
+    </style>
+
+    <style name="Theme.RemindNotes" parent="Base.Theme.RemindNotes" />
+</resources>
