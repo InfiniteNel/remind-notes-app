@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_note"
+            android:title="@string/menuNavNote" />
+
+        <item
+            android:id="@+id/nav_reminder"
+            android:title="@string/menuNavReminder" />
+
+        <item
+            android:id="@+id/nav_tasklist"
+            android:title="@string/menuNavTasklist" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="@string/menuDividerTask">
+            <menu>
+                <item
+                    android:id="@+id/nav_myday"
+                    android:title="@string/menuNavMyday" />
+
+                <item
+                    android:id="@+id/nav_myweek"
+                    android:title="@string/menuNavMyweek" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

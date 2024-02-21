@@ -1,2 +1,9 @@
 <resources>
+    <!-- MainMenu -->
+    <string name="menuNavNote">Notas</string>
+    <string name="menuNavReminder">Recordatorios</string>
+    <string name="menuNavTasklist">Lista de tareas</string>
+    <string name="menuDividerTask">Tareas</string>
+    <string name="menuNavMyday">Mi día</string>
+    <string name="menuNavMyweek">Mi semana</string>
 </resources>
