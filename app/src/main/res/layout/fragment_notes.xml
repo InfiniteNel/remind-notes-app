@@ -20,6 +20,18 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp"/>
 
+    <TextView
+        android:id="@+id/tvNoteNoData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tvNoteNoDataText"
+        android:gravity="center"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rvListNotes"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginEnd"
+        app:layout_constraintStart_toStartOf="@+id/glMarginStart"
+        app:layout_constraintTop_toTopOf="@+id/rvListNotes" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListNotes"
         android:layout_width="0dp"
