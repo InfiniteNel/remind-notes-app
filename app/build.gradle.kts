@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -51,6 +52,7 @@ android {
 dependencies {
     val navVersion = "2.7.6"
     val roomVersion = "2.6.1"
+    val daggerHiltVersion = "2.48"
 
     //NavComponent
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
@@ -60,6 +62,10 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
+
+    //DaggerHilt
+    implementation("com.google.dagger:hilt-android:$daggerHiltVersion")
+    kapt("com.google.dagger:hilt-compiler:$daggerHiltVersion")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
