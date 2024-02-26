@@ -6,5 +6,10 @@
     <string name="menuDividerTask">Tareas</string>
     <string name="menuNavMyday">Mi día</string>
     <string name="menuNavMyweek">Mi semana</string>
-    <string name="tvNoteNoDataText"><b>Sin Notas Encontradas</b> \n\nParece que aún no has creado ninguna nota. ¡Hora de empezar! Pulsa el botón \"+\" para añadir una nueva nota y organizar tu día.</string>
+    <string name="tvNoteNoDataText"><b>Sin Notas Encontradas</b>\n\nParece que aún no has creado ninguna nota. ¡Hora de empezar! Pulsa el botón \"+\" para añadir una nueva nota y organizar tu día.</string>
+
+    <!-- ManageNoteFragment -->
+    <string name="tvNoteTitleText">Título</string>
+    <string name="tvNoteDescriptionText">Empieza a escribir</string>
+    <string name="tvNoteDateText">dd mmm yyyy</string>
 </resources>
