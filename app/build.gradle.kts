@@ -3,6 +3,7 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     id("org.jetbrains.kotlin.android")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
