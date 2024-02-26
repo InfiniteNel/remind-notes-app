@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import jroslar.infinitenel.remindnotes.databinding.FragmentNotesBinding
@@ -43,6 +44,15 @@ class NotesFragment : Fragment() {
     private fun initUI() {
         initAdapter()
         initUiState()
+        initListener()
+    }
+
+    private fun initListener() {
+        binding.floatingActionButton.setOnClickListener {
+            findNavController().navigate(
+                NotesFragmentDirections.actionNavNoteToManageNoteFragment()
+            )
+        }
     }
 
     private fun initUiState() {

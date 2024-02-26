@@ -19,7 +19,11 @@
         android:id="@+id/nav_note"
         android:name="jroslar.infinitenel.remindnotes.ui.notes.NotesFragment"
         android:label="fragment_notes"
-        tools:layout="@layout/fragment_notes" />
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_nav_note_to_manageNoteFragment"
+            app:destination="@id/manageNoteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_reminder"
         android:name="jroslar.infinitenel.remindnotes.ui.reminders.RemindersFragment"
@@ -30,4 +34,9 @@
         android:name="jroslar.infinitenel.remindnotes.ui.tasklist.TaskListFragment"
         android:label="fragment_task_list"
         tools:layout="@layout/fragment_task_list" />
+    <fragment
+        android:id="@+id/manageNoteFragment"
+        android:name="jroslar.infinitenel.remindnotes.ui.managenote.ManageNoteFragment"
+        android:label="fragment_manage_note"
+        tools:layout="@layout/fragment_manage_note" />
 </navigation>
