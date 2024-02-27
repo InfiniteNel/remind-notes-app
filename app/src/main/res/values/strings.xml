@@ -12,4 +12,8 @@
     <string name="tvNoteTitleText">Título</string>
     <string name="tvNoteDescriptionText">Empieza a escribir</string>
     <string name="tvNoteDateText">dd mmm yyyy</string>
+
+    <!-- EditNoteMenu -->
+    <string name="editNoteSaveTitle">Guardar</string>
+    <string name="editNoteDeleteTitle">Borrar</string>
 </resources>
