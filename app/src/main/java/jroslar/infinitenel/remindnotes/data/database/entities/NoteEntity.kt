@@ -15,4 +15,4 @@ data class NoteEntity (
     @ColumnInfo(name = "noteDay") val noteDay: String
 )
 
-fun NoteEntity.toModelNote(): NoteModel = NoteModel(title, description, important, noteDay)
+fun NoteEntity.toModelNote(): NoteModel = NoteModel(id, title, description, important, noteDay)

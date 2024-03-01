@@ -86,10 +86,10 @@ class ManageNoteFragment : Fragment(), MenuProvider {
 
     private fun getNoteData(): NoteModel {
         return NoteModel(
-            binding.tvNoteTitle.text.toString(),
-            binding.tvNoteDescription.text.toString(),
-            false,
-            binding.tvNoteDate.text.toString()
+            title = binding.tvNoteTitle.text.toString(),
+            description = binding.tvNoteDescription.text.toString(),
+            important = false,
+            noteDay = binding.tvNoteDate.text.toString()
         )
     }
 }
