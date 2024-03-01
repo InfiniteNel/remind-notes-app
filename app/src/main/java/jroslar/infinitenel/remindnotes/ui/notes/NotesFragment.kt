@@ -82,6 +82,7 @@ class NotesFragment : Fragment() {
 
     private fun initAdapter() {
         notesAdapter = NotesAdapter(onItemSelect = {
+            findNavController().navigate(NotesFragmentDirections.actionNavNoteToEditNoteFragment(it.id))
         })
 
         binding.rvListNotes.apply {

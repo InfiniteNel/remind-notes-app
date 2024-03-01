@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_nav_note_to_manageNoteFragment"
             app:destination="@id/manageNoteFragment" />
+        <action
+            android:id="@+id/action_nav_note_to_editNoteFragment"
+            app:destination="@id/editNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_reminder"
@@ -39,4 +42,12 @@
         android:name="jroslar.infinitenel.remindnotes.ui.managenote.ManageNoteFragment"
         android:label="fragment_manage_note"
         tools:layout="@layout/fragment_manage_note" />
+    <fragment
+        android:id="@+id/editNoteFragment"
+        android:name="jroslar.infinitenel.remindnotes.ui.managenote.EditNoteFragment"
+        android:label="EditNoteFragment" >
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+    </fragment>
 </navigation>
