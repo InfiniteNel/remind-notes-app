@@ -14,7 +14,15 @@ class NoteRepositoryImpl @Inject constructor(
         return dao.getAllNotes().map { it.toModelNote() }
     }
 
-    override suspend fun insertNote(noteModel: NoteModel){
-        return dao.insertNote(noteModel.toEntityNote())
+    override suspend fun getNoteById(id: Int): NoteModel {
+        return dao.getNoteById(id).toModelNote()
+    }
+
+    override suspend fun insertNote(noteModel: NoteModel) {
+        dao.insertNote(noteModel.toEntityNote())
+    }
+
+    override suspend fun deleteNote(noteModel: NoteModel) {
+        dao.deleteNote(noteModel.toEntityNote())
     }
 }
