@@ -22,4 +22,7 @@
     <string name="dialogDeleteNoteDescription">¿Desea borrar esta nota?</string>
     <string name="dialogDeleteNoteNegativeAction">Cancelar</string>
     <string name="dialogDeleteNotePositiveAction">Borrar</string>
+
+    <!-- SaveNoteToast -->
+    <string name="toastSaveNoteText">Nota guardada exitosamente</string>
 </resources>

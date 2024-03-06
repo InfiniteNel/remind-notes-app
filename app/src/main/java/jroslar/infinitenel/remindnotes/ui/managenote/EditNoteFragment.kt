@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -88,6 +89,7 @@ class EditNoteFragment : Fragment(), MenuProvider {
                 noteDay = binding.tvEditNoteDate.text.toString()
             )
         )
+        Toast.makeText(requireContext(), getString(R.string.toastSaveNoteText), Toast.LENGTH_SHORT).show()
         return true
     }
 
