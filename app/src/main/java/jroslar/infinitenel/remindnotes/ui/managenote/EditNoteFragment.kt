@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import jroslar.infinitenel.remindnotes.R
+import jroslar.infinitenel.remindnotes.core.dialogs.SuccessDialog
 import jroslar.infinitenel.remindnotes.databinding.FragmentEditNoteBinding
 import kotlinx.coroutines.launch
 
@@ -70,9 +72,25 @@ class EditNoteFragment : Fragment(), MenuProvider {
 
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
-            R.id.editNoteDelete -> true
+            R.id.editNoteDelete -> showDialogDeleteNote()
             R.id.editNoteSave -> true
             else -> false
         }
+    }
+
+    private fun showDialogDeleteNote(): Boolean {
+        SuccessDialog.create(
+            title = getString(R.string.dialogDeleteNoteTitle),
+            description = getString(R.string.dialogDeleteNoteDescription),
+            negativeAction = SuccessDialog.Action(getString(R.string.dialogDeleteNoteNegativeAction)) {
+                it.dismiss()
+            },
+            positiveAction = SuccessDialog.Action(getString(R.string.dialogDeleteNotePositiveAction)) {
+                viewmodel.deleteNote(args.noteId)
+                it.dismiss()
+                findNavController().navigateUp()
+            }
+        ).show(requireActivity().supportFragmentManager, null)
+        return true
     }
 }

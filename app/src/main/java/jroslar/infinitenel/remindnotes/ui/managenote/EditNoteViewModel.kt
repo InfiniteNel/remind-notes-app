@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jroslar.infinitenel.remindnotes.domain.model.NoteModel
+import jroslar.infinitenel.remindnotes.domain.usecase.DeleteNoteUseCase
 import jroslar.infinitenel.remindnotes.domain.usecase.GetNoteByIdUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class EditNoteViewModel @Inject constructor(
-    private val getNoteByIdUseCase: GetNoteByIdUseCase
+    private val getNoteByIdUseCase: GetNoteByIdUseCase,
+    private val deleteNoteUseCase: DeleteNoteUseCase
 ): ViewModel() {
     private var _data = MutableStateFlow<NoteModel?>(null)
     val data: StateFlow<NoteModel?> = _data
@@ -24,6 +26,14 @@ class EditNoteViewModel @Inject constructor(
             val result = withContext(Dispatchers.IO) { getNoteByIdUseCase(id) }
 
             _data.value = result
+        }
+    }
+
+    fun deleteNote(id: Int) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                deleteNoteUseCase(id)
+            }
         }
     }
 }

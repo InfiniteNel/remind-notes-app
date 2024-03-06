@@ -16,4 +16,10 @@
     <!-- EditNoteMenu -->
     <string name="editNoteSaveTitle">Guardar</string>
     <string name="editNoteDeleteTitle">Borrar</string>
+
+    <!-- DeleteNoteDialog -->
+    <string name="dialogDeleteNoteTitle">Eliminar Nota</string>
+    <string name="dialogDeleteNoteDescription">¿Desea borrar esta nota?</string>
+    <string name="dialogDeleteNoteNegativeAction">Cancelar</string>
+    <string name="dialogDeleteNotePositiveAction">Borrar</string>
 </resources>
