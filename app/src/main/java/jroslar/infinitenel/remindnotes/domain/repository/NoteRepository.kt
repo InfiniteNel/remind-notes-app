@@ -6,5 +6,5 @@ interface NoteRepository {
     suspend fun getAllNotes(): List<NoteModel>
     suspend fun getNoteById(id: Int): NoteModel
     suspend fun insertNote(noteModel: NoteModel)
-    suspend fun deleteNote(noteModel: NoteModel)
+    suspend fun deleteNote(id: Int)
 }
