@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import jroslar.infinitenel.remindnotes.data.database.entities.NoteEntity
 
 @Dao
@@ -16,4 +17,6 @@ interface NoteDao {
     suspend fun insertNote(noteEntity: NoteEntity)
     @Query("DELETE FROM note_table WHERE id = :id")
     suspend fun deleteNote(id: Int)
+    @Update
+    suspend fun updateNote(noteEntity: NoteEntity)
 }

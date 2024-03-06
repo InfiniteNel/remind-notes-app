@@ -18,6 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import jroslar.infinitenel.remindnotes.R
 import jroslar.infinitenel.remindnotes.core.dialogs.SuccessDialog
 import jroslar.infinitenel.remindnotes.databinding.FragmentEditNoteBinding
+import jroslar.infinitenel.remindnotes.domain.model.NoteModel
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -73,9 +74,21 @@ class EditNoteFragment : Fragment(), MenuProvider {
     override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             R.id.editNoteDelete -> showDialogDeleteNote()
-            R.id.editNoteSave -> true
+            R.id.editNoteSave -> saveNote()
             else -> false
         }
+    }
+
+    private fun saveNote(): Boolean {
+        viewmodel.updateNote(
+            NoteModel(
+                id = args.noteId,
+                title = binding.tvEditNoteTitle.text.toString(),
+                description = binding.tvEditNoteDescription.text.toString(),
+                noteDay = binding.tvEditNoteDate.text.toString()
+            )
+        )
+        return true
     }
 
     private fun showDialogDeleteNote(): Boolean {
