@@ -29,8 +29,9 @@ class DatePickerDialog: DialogFragment(), DatePickerDialog.OnDateSetListener {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        return DatePickerDialog(
-            activity as Context, this, year, month, day
-        )
+        val dialogDate = DatePickerDialog(activity as Context, this, year, month, day)
+
+        dialogDate.datePicker.minDate = c.timeInMillis
+        return dialogDate
     }
 }
