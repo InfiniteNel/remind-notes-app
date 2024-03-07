@@ -17,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import jroslar.infinitenel.remindnotes.R
+import jroslar.infinitenel.remindnotes.core.dialogs.DatePickerDialog
 import jroslar.infinitenel.remindnotes.core.dialogs.SuccessDialog
 import jroslar.infinitenel.remindnotes.databinding.FragmentEditNoteBinding
 import jroslar.infinitenel.remindnotes.domain.model.NoteModel
@@ -49,6 +50,14 @@ class EditNoteFragment : Fragment(), MenuProvider {
     private fun initUI() {
         initMenu()
         initData()
+        initListener()
+    }
+
+    private fun initListener() {
+        binding.tvEditNoteDate.setOnClickListener {
+            DatePickerDialog.create { date -> binding.tvEditNoteDate.text = date }
+                .show(requireActivity().supportFragmentManager, null)
+        }
     }
 
     private fun initData() {
