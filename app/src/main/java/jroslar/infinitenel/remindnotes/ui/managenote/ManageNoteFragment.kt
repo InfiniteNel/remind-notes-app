@@ -1,5 +1,6 @@
 package jroslar.infinitenel.remindnotes.ui.managenote
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -17,6 +18,10 @@ import jroslar.infinitenel.remindnotes.R
 import jroslar.infinitenel.remindnotes.core.dialogs.DatePickerDialog
 import jroslar.infinitenel.remindnotes.databinding.FragmentManageNoteBinding
 import jroslar.infinitenel.remindnotes.domain.model.NoteModel
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Calendar
+import java.util.Locale
 
 @AndroidEntryPoint
 class ManageNoteFragment : Fragment(), MenuProvider {
@@ -42,6 +47,22 @@ class ManageNoteFragment : Fragment(), MenuProvider {
     private fun initUI() {
         initMenu()
         initListener()
+        initDefaultDate()
+    }
+
+    private fun initDefaultDate() {
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val fechaLocalDate = LocalDate.of(year, month, day)
+            val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
+            binding.tvNoteDate.text = fechaLocalDate.format(formatter)
+        } else {
+            binding.tvNoteDate.text = "%d-%d-%d".format(day, month, year)
+        }
     }
 
     private fun initListener() {
