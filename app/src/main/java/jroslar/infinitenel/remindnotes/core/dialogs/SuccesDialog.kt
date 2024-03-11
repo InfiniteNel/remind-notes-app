@@ -43,7 +43,6 @@ class SuccessDialog: DialogFragment()  {
 
         window.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER) // Centra horizontalmente
 
-        params?.width = ViewGroup.LayoutParams.MATCH_PARENT // Ajusta el ancho
         window.attributes = params
 
         window.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
