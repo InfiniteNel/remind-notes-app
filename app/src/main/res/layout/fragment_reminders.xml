@@ -1,8 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.reminders.RemindersFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glMarginStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glMarginEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp"/>
+
+    <TextView
+        android:id="@+id/tvReminderNoData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tvReminderNoDataText"
+        android:gravity="center"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rvListReminder"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginEnd"
+        app:layout_constraintStart_toStartOf="@+id/glMarginStart"
+        app:layout_constraintTop_toTopOf="@+id/rvListReminder" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListReminder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginEnd"
+        app:layout_constraintStart_toStartOf="@+id/glMarginStart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/baseline_alarm_add_24"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/glMarginEnd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

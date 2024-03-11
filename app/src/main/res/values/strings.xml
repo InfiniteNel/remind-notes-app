@@ -25,4 +25,7 @@
 
     <!-- SaveNoteToast -->
     <string name="toastSaveNoteText">Nota guardada exitosamente</string>
+
+    <!-- RemindersFragment -->
+    <string name="tvReminderNoDataText"><b>No hay recordatorios pendientes</b>\n\nParece que no tienes ningún recordatorio programado. ¡Aprovecha este momento para relajarte o planificar nuevas tareas! Si necesitas configurar un recordatorio, pulsa el botón \"+\".</string>
 </resources>
