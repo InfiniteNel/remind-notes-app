@@ -28,4 +28,13 @@
 
     <!-- RemindersFragment -->
     <string name="tvReminderNoDataText"><b>No hay recordatorios pendientes</b>\n\nParece que no tienes ningún recordatorio programado. ¡Aprovecha este momento para relajarte o planificar nuevas tareas! Si necesitas configurar un recordatorio, pulsa el botón \"+\".</string>
+
+    <!-- DaysOfWeek -->
+    <string name="monday">Lunes</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="thursday">Jueves</string>
+    <string name="friday">Viernes</string>
+    <string name="saturday">Sábado</string>
+    <string name="sunday">Domingo</string>
 </resources>

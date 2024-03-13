@@ -18,10 +18,17 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideRoom(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, NotificationDatabase::class.java, DATABASE_NAME).build()
+    fun provideRoom(@ApplicationContext context: Context): NotificationDatabase {
+        return Room.databaseBuilder(context, NotificationDatabase::class.java, DATABASE_NAME)
+            .fallbackToDestructiveMigration()
+            .build()
+    }
 
     @Singleton
     @Provides
     fun provideNoteDao(db: NotificationDatabase) = db.getNoteDao()
+
+    @Singleton
+    @Provides
+    fun provideReminderDao(db: NotificationDatabase) = db.getReminderDao()
 }
