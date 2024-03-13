@@ -1,4 +1,7 @@
 <resources>
+    <string name="dateDefaultText">dd mmm yyyy</string>
+    <string name="timeDefaultText">hh:mm</string>
+
     <!-- MainMenu -->
     <string name="menuNavNote">Notas</string>
     <string name="menuNavReminder">Recordatorios</string>
@@ -11,7 +14,6 @@
     <!-- ManageNoteFragment -->
     <string name="tvNoteTitleText">Título</string>
     <string name="tvNoteDescriptionText">Empieza a escribir</string>
-    <string name="tvNoteDateText">dd mmm yyyy</string>
 
     <!-- EditNoteMenu -->
     <string name="editNoteSaveTitle">Guardar</string>
