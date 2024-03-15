@@ -25,11 +25,11 @@ class DatePickerDialog: DialogFragment(), DatePickerDialog.OnDateSetListener {
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val fechaLocalDate = LocalDate.of(year, month, dayOfMonth)
+            val fechaLocalDate = LocalDate.of(year, month + 1, dayOfMonth)
             val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
             onSelectDate(fechaLocalDate.format(formatter))
         } else {
-            onSelectDate("%d-%d-%d".format(dayOfMonth, month, year))
+            onSelectDate("%d-%d-%d".format(dayOfMonth, month + 1, year))
         }
     }
 
