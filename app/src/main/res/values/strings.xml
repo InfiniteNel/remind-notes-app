@@ -39,4 +39,14 @@
     <string name="friday">Viernes</string>
     <string name="saturday">Sábado</string>
     <string name="sunday">Domingo</string>
+
+    <!-- ManageRemindersDialog -->
+    <string name="tvAddDateTextReminderText">Definir recordatorio</string>
+    <string name="btnMondayText">L</string>
+    <string name="btnTuesdayText">M</string>
+    <string name="btnWednesdayText">X</string>
+    <string name="btnThursdayText">J</string>
+    <string name="btnFridayText">V</string>
+    <string name="btnSaturdayText">S</string>
+    <string name="btnSundayText">D</string>
 </resources>

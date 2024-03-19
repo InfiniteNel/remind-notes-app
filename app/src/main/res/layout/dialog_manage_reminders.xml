@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="16dp"
+    android:background="@drawable/shape_dialog_success"
+    android:paddingVertical="16dp">
+
+    <EditText
+        android:id="@+id/etTitleReminder"
+        style="@style/TextBody1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tvNoteTitleText"
+        android:background="@null"
+        android:inputType="text"
+        android:autofillHints="name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etdescriptionReminder"
+        style="@style/TextBody2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="@string/tvNoteDescriptionText"
+        android:background="@null"
+        android:gravity="top"
+        android:lines="4"
+        android:inputType="none"
+        android:importantForAutofill="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTitleReminder" />
+
+    <TextView
+        android:id="@+id/tvTimeReminder"
+        style="@style/TextTimeBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etdescriptionReminder" />
+
+    <TextView
+        android:id="@+id/tvAddDateTextReminder"
+        style="@style/TextBody2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:drawablePadding="8dp"
+        android:text="@string/tvAddDateTextReminderText"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/baseline_edit_calendar_24"
+        app:layout_constraintBottom_toTopOf="@+id/btnPositive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llContainerDaysOfWeek" />
+
+    <TextView
+        android:id="@+id/tvAddDateReminder"
+        style="@style/TextBody2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddDateTextReminder"
+        app:layout_constraintEnd_toStartOf="@+id/ivAddDateReminder"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toEndOf="@+id/tvAddDateTextReminder"
+        app:layout_constraintTop_toTopOf="@+id/tvAddDateTextReminder"
+        tools:text="dd MMM yyyy" />
+
+    <ImageView
+        android:id="@+id/ivAddDateReminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddDateReminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvAddDateReminder"
+        app:srcCompat="@drawable/baseline_alarm_add_24" />
+
+    <LinearLayout
+        android:id="@+id/llContainerDaysOfWeek"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeReminder">
+
+        <CheckBox
+            android:id="@+id/btnMonday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnMondayText" />
+
+        <CheckBox
+            android:id="@+id/btnTuesday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnTuesdayText" />
+
+        <CheckBox
+            android:id="@+id/btnWednesday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnWednesdayText" />
+
+        <CheckBox
+            android:id="@+id/btnThursday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnThursdayText" />
+
+        <CheckBox
+            android:id="@+id/btnFriday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnFridayText" />
+
+        <CheckBox
+            android:id="@+id/btnSaturday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnSaturdayText" />
+
+        <CheckBox
+            android:id="@+id/btnSunday"
+            style="@style/StyleDaysOfWeeksCheckBox"
+            android:text="@string/btnSundayText" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNegative"
+        style="@style/StyleButtonSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnPositive"
+        app:layout_constraintEnd_toStartOf="@+id/btnPositive"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text=":Eliminar" />
+
+    <Button
+        android:id="@+id/btnPositive"
+        style="@style/StyleButtonPrimary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnNegative"
+        tools:text=":Guardar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
