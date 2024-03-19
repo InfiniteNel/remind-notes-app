@@ -12,10 +12,12 @@ class RemindersViewHolder(view: View): RecyclerView.ViewHolder(view) {
         binding.tvTitleReminder.text = reminderModel.title
         binding.tvTimeReminder.text = reminderModel.timeDay
 
-        if (reminderModel.repeatDay.isEmpty()) {
-            binding.tvDaysReminder.text = reminderModel.remindDay
+        if (reminderModel.remindDay.isEmpty()) {
+            binding.tvDaysReminder.text = reminderModel.repeatDay.joinToString {
+                it.getValue(itemView.context).substring(0, 3).plus(".")
+            }
         } else {
-            binding.tvDaysReminder.text = reminderModel.repeatDay.toString()
+            binding.tvDaysReminder.text = reminderModel.remindDay
         }
 
         binding.root.setOnClickListener { onItemSelect(reminderModel) }
