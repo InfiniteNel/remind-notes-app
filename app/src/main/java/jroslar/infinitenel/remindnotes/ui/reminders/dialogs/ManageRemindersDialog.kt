@@ -117,7 +117,6 @@ class ManageRemindersDialog: DialogFragment() {
         DatePickerDialog.create {
             binding.ivAddDateReminder.setImageResource(R.drawable.baseline_alarm_off_24)
             binding.tvAddDateReminder.text = it
-            reminder = reminder.copy(remindDay = it)
         }.show(requireActivity().supportFragmentManager, null)
     }
 
@@ -126,6 +125,7 @@ class ManageRemindersDialog: DialogFragment() {
             title = binding.etTitleReminder.text.toString(),
             description = binding.etdescriptionReminder.text.toString(),
             repeatDay = getListDayOfWeek(),
+            remindDay = binding.tvAddDateReminder.text.toString(),
             timeDay = binding.tvTimeReminder.text.toString()
         )
     }
