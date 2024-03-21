@@ -12,9 +12,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import jroslar.infinitenel.remindnotes.R
 import jroslar.infinitenel.remindnotes.databinding.FragmentRemindersBinding
 import jroslar.infinitenel.remindnotes.domain.model.ReminderModel
 import jroslar.infinitenel.remindnotes.ui.reminders.adapter.RemindersAdapter
+import jroslar.infinitenel.remindnotes.ui.reminders.dialogs.ManageRemindersDialog
 import kotlinx.coroutines.launch
 
 
@@ -41,7 +43,14 @@ class RemindersFragment : Fragment() {
 
         initAdapter()
         initUIState()
+        initListener()
         viewModel.getRemindersList()
+    }
+
+    private fun initListener() {
+        binding.fabAddReminder.setOnClickListener {
+            showCreateReminderDialog()
+        }
     }
 
     private fun initUIState() {
@@ -68,13 +77,39 @@ class RemindersFragment : Fragment() {
     }
 
     private fun initAdapter() {
-        reminderAdapter = RemindersAdapter( onItemSelected = {
-
+        reminderAdapter = RemindersAdapter( onItemSelected = { model ->
+            showEditReminderDialog(model)
         })
 
         binding.rvListReminder.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = reminderAdapter
         }
+    }
+
+    private fun showEditReminderDialog(model: ReminderModel) {
+        ManageRemindersDialog.create(
+            reminderModel = model,
+            positiveAction = ManageRemindersDialog.Action(getString(R.string.dialogSaveReminderPositiveAction)) { dialog ->
+                viewModel.updateReminder(dialog.reminder)
+                dialog.dismiss()
+            },
+            negativeAction = ManageRemindersDialog.Action(getString(R.string.dialogSaveReminderNegativeAction)) { dialog ->
+                viewModel.deleteReminder(dialog.reminder.id)
+                dialog.dismiss()
+            }
+        ).show(requireActivity().supportFragmentManager, null)
+    }
+
+    private fun showCreateReminderDialog() {
+        ManageRemindersDialog.create(
+            positiveAction = ManageRemindersDialog.Action(getString(R.string.dialogInsertReminderPositiveAction)) { dialog ->
+                viewModel.insertReminder(dialog.reminder)
+                dialog.dismiss()
+            },
+            negativeAction = ManageRemindersDialog.Action(getString(R.string.dialogInsertReminderNegativeAction)) { dialog ->
+                dialog.dismiss()
+            }
+        ).show(requireActivity().supportFragmentManager, null)
     }
 }
