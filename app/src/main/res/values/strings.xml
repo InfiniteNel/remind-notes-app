@@ -53,4 +53,10 @@
     <string name="btnFridayText">V</string>
     <string name="btnSaturdayText">S</string>
     <string name="btnSundayText">D</string>
+
+    <!-- MydayFragment -->
+    <string name="tvMydayTodayText">Hoy</string>
+    <string name="tvMydayTomorrowText">Mañana</string>
+    <string name="tvNoDataTodayText"><b>¡Sin notificaciones hoy!</b>\n\nParece que no tienes ninguna notificación pendiente para hoy. ¡Disfruta de un día tranquilo!</string>
+    <string name="tvNoDataTomorrowText"><b>¡Sin notificaciones para mañana!</b>\n\nParece que no tienes ninguna notificación programada para mañana. ¡Aprovecha este día para relajarte o planificar nuevas actividades!</string>
 </resources>

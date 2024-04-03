@@ -1,8 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.myday.MydayFragment">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.myday.MydayFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMarginBegin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glMarginEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <View
+            android:id="@+id/dtvMyday1"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMydayToday"
+            app:layout_constraintEnd_toStartOf="@+id/tvMydayToday"
+            app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
+            app:layout_constraintTop_toTopOf="@+id/tvMydayToday" />
+
+        <TextView
+            android:id="@+id/tvMydayToday"
+            style="@style/TextTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvMydayTodayText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/dtvMyday2"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMydayToday"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginEnd"
+            app:layout_constraintStart_toEndOf="@+id/tvMydayToday"
+            app:layout_constraintTop_toTopOf="@+id/tvMydayToday" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListToday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/glMarginEnd"
+            app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
+            app:layout_constraintTop_toBottomOf="@+id/tvMydayToday"
+            tools:listitem="@layout/item_reminder" />
+
+        <TextView
+            android:id="@+id/tvNoDataToday"
+            style="@style/TextBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center"
+            android:text="@string/tvNoDataTodayText"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginEnd"
+            app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
+            app:layout_constraintTop_toBottomOf="@+id/tvMydayToday" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="rvListToday,tvNoDataToday"/>
+
+        <View
+            android:id="@+id/dtvMydayTomorrow1"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMydayTomorrow"
+            app:layout_constraintEnd_toStartOf="@+id/tvMydayTomorrow"
+            app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
+            app:layout_constraintTop_toTopOf="@+id/tvMydayTomorrow" />
+
+        <TextView
+            android:id="@+id/tvMydayTomorrow"
+            style="@style/TextTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/tvMydayTomorrowText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier" />
+
+        <View
+            android:id="@+id/dtvMydayTomorrow2"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="@+id/tvMydayTomorrow"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginEnd"
+            app:layout_constraintStart_toEndOf="@+id/tvMydayTomorrow"
+            app:layout_constraintTop_toTopOf="@+id/tvMydayTomorrow" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListTomorrow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/glMarginEnd"
+            app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
+            app:layout_constraintTop_toBottomOf="@+id/tvMydayTomorrow"
+            tools:listitem="@layout/item_reminder" />
+
+        <TextView
+            android:id="@+id/tvNoDataTomorrow"
+            style="@style/TextBody2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="8dp"
+            android:gravity="center"
+            android:text="@string/tvNoDataTomorrowText"
+            app:layout_constraintEnd_toEndOf="@+id/glMarginEnd"
+            app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
+            app:layout_constraintTop_toBottomOf="@+id/tvMydayTomorrow" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
