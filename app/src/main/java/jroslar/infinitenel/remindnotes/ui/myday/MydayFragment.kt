@@ -11,11 +11,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
+import jroslar.infinitenel.remindnotes.R
 import jroslar.infinitenel.remindnotes.databinding.FragmentMydayBinding
 import jroslar.infinitenel.remindnotes.domain.model.NotificationModel
 import jroslar.infinitenel.remindnotes.ui.myday.adapter.MydayAdapter
+import jroslar.infinitenel.remindnotes.ui.reminders.dialogs.ManageRemindersDialog
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -51,29 +54,38 @@ class MydayFragment : Fragment() {
 
     private fun initList() {
         val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH) + 1
-        val day = c.get(Calendar.DAY_OF_MONTH)
+        viewModel.getListNotification(getDateToday(c), getDateTomorrow(c))
+    }
 
+    private fun getDateTomorrow(c: Calendar): String {
         c.add(Calendar.DATE, 1)
 
         val dayTomorrow = c.get(Calendar.DAY_OF_MONTH)
         val monthTomorrow = c.get(Calendar.MONTH) + 1
         val yearTomorrow = c.get(Calendar.YEAR)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val dateLocalToday = LocalDate.of(year, month, day)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val dateLocalTomorrow = LocalDate.of(yearTomorrow, monthTomorrow, dayTomorrow)
             val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
 
-            viewModel.getListNotification(
-                dateLocalToday.format(formatter), dateLocalTomorrow.format(formatter)
-            )
+            dateLocalTomorrow.format(formatter)
         } else {
-            viewModel.getListNotification(
-                "%d-%d-%d".format(day, month, year),
-                "%d-%d-%d".format(dayTomorrow, monthTomorrow, yearTomorrow)
-            )
+            "%d-%d-%d".format(dayTomorrow, monthTomorrow, yearTomorrow)
+        }
+    }
+
+    private fun getDateToday(c: Calendar): String {
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH) + 1
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val dateLocalToday = LocalDate.of(year, month, day)
+            val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
+
+            dateLocalToday.format(formatter)
+        } else {
+            "%d-%d-%d".format(day, month, year)
         }
     }
 
@@ -126,10 +138,24 @@ class MydayFragment : Fragment() {
     private fun createNewAdapter(): MydayAdapter {
         return MydayAdapter(
             onNoteSelected = {
-
+                findNavController().navigate(
+                    MydayFragmentDirections.actionNavMydayToEditNoteFragment(
+                        it.id
+                    )
+                )
             },
             onReminderSelected = {
-
+                ManageRemindersDialog.create(
+                    reminderModel = it,
+                    positiveAction = ManageRemindersDialog.Action(getString(R.string.dialogSaveReminderPositiveAction)) { dialog ->
+                        val c = Calendar.getInstance()
+                        viewModel.updateReminder(dialog.reminder, getDateToday(c), getDateTomorrow(c))
+                        dialog.dismiss()
+                    },
+                    negativeAction = ManageRemindersDialog.Action(getString(R.string.dialogSaveReminderNegativeAction)) { dialog ->
+                        dialog.dismiss()
+                    }
+                ).show(requireActivity().supportFragmentManager, null)
             }
         )
     }
