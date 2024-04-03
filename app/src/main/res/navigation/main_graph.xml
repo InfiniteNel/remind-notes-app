@@ -9,7 +9,11 @@
         android:id="@+id/nav_myday"
         android:name="jroslar.infinitenel.remindnotes.ui.myday.MydayFragment"
         android:label="fragment_myday"
-        tools:layout="@layout/fragment_myday" />
+        tools:layout="@layout/fragment_myday" >
+        <action
+            android:id="@+id/action_nav_myday_to_editNoteFragment"
+            app:destination="@id/editNoteFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_myweek"
         android:name="jroslar.infinitenel.remindnotes.ui.myweek.MyweekFragment"
