@@ -3,14 +3,11 @@ package jroslar.infinitenel.remindnotes.core.dialogs
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import jroslar.infinitenel.remindnotes.core.utils.DateUtils
 import java.util.Calendar
-import java.util.Locale
 
 class DatePickerDialog: DialogFragment(), DatePickerDialog.OnDateSetListener {
     private lateinit var onSelectDate: (date: String) -> Unit
@@ -24,13 +21,7 @@ class DatePickerDialog: DialogFragment(), DatePickerDialog.OnDateSetListener {
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val fechaLocalDate = LocalDate.of(year, month + 1, dayOfMonth)
-            val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
-            onSelectDate(fechaLocalDate.format(formatter))
-        } else {
-            onSelectDate("%d-%d-%d".format(dayOfMonth, month + 1, year))
-        }
+        onSelectDate(DateUtils.intsToDateFormat(year, month, dayOfMonth))
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

@@ -1,6 +1,5 @@
 package jroslar.infinitenel.remindnotes.ui.myday
 
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,15 +14,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import jroslar.infinitenel.remindnotes.R
+import jroslar.infinitenel.remindnotes.core.utils.DateUtils
 import jroslar.infinitenel.remindnotes.databinding.FragmentMydayBinding
 import jroslar.infinitenel.remindnotes.domain.model.NotificationModel
 import jroslar.infinitenel.remindnotes.ui.myday.adapter.MydayAdapter
 import jroslar.infinitenel.remindnotes.ui.reminders.dialogs.ManageRemindersDialog
 import kotlinx.coroutines.launch
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.Calendar
-import java.util.Locale
 
 @AndroidEntryPoint
 class MydayFragment : Fragment() {
@@ -61,32 +58,18 @@ class MydayFragment : Fragment() {
         c.add(Calendar.DATE, 1)
 
         val dayTomorrow = c.get(Calendar.DAY_OF_MONTH)
-        val monthTomorrow = c.get(Calendar.MONTH) + 1
+        val monthTomorrow = c.get(Calendar.MONTH)
         val yearTomorrow = c.get(Calendar.YEAR)
 
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val dateLocalTomorrow = LocalDate.of(yearTomorrow, monthTomorrow, dayTomorrow)
-            val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
-
-            dateLocalTomorrow.format(formatter)
-        } else {
-            "%d-%d-%d".format(dayTomorrow, monthTomorrow, yearTomorrow)
-        }
+        return DateUtils.intsToDateFormat(yearTomorrow, monthTomorrow, dayTomorrow)
     }
 
     private fun getDateToday(c: Calendar): String {
         val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH) + 1
+        val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val dateLocalToday = LocalDate.of(year, month, day)
-            val formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.getDefault())
-
-            dateLocalToday.format(formatter)
-        } else {
-            "%d-%d-%d".format(day, month, year)
-        }
+        return DateUtils.intsToDateFormat(year, month, day)
     }
 
     private fun initStateUI() {
