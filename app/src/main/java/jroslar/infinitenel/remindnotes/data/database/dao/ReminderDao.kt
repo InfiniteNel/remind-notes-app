@@ -13,6 +13,8 @@ interface ReminderDao {
     suspend fun getAllReminders(): List<ReminderEntity>
     @Query("SELECT * FROM reminder_table WHERE remindDay = :day ORDER BY timeDay ASC")
     suspend fun getRemindersByDay(day: String): List<ReminderEntity>
+    @Query("SELECT * FROM reminder_table WHERE repeatDay LIKE '%' || :dayOfWeek || '%' ORDER BY timeDay ASC")
+    suspend fun getRemindersByDayOfWeek(dayOfWeek: String): List<ReminderEntity>
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertReminder(reminderEntity: ReminderEntity)
     @Query("DELETE FROM reminder_table WHERE id = :id")
