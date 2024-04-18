@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.managenote.ManageNoteFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -59,14 +60,4 @@
         app:layout_constraintEnd_toStartOf="@+id/glMarginEnd"
         app:layout_constraintStart_toStartOf="@+id/glMarginBegin"
         app:layout_constraintTop_toBottomOf="@+id/tvEditNoteDate" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabEditNoteImportant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/baseline_star_border_24"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/glMarginEnd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

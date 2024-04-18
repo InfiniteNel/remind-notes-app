@@ -4,9 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#8BA8A4A4</color>
 
-    <color name="primary">#D9F2B4</color>
-    <color name="primaryLight">#D3FAC7</color>
-    <color name="primaryDark">#B4EBCA</color>
-    <color name="secondary">#BCF4F5</color>
-    <color name="accent">#FFB7C3</color>
+    <color name="primary">#FEDBD0</color>
+    <color name="primaryDark">#EFD7D5</color>
+    <color name="secondary">#FEEAE6</color>
+    <color name="secondaryDark">#FCB4A7</color>
+    <color name="accent">#442C2E</color>
+    <color name="error">#B71C1C</color>
 </resources>

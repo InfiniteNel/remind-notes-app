@@ -6,6 +6,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
+import jroslar.infinitenel.remindnotes.R
 import jroslar.infinitenel.remindnotes.core.utils.DateUtils
 import java.util.Calendar
 
@@ -30,7 +31,7 @@ class DatePickerDialog: DialogFragment(), DatePickerDialog.OnDateSetListener {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        val dialogDate = DatePickerDialog(activity as Context, this, year, month, day)
+        val dialogDate = DatePickerDialog(activity as Context, R.style.PickerDialogTheme, this, year, month, day)
 
         dialogDate.datePicker.minDate = c.timeInMillis
         return dialogDate

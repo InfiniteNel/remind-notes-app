@@ -50,6 +50,8 @@
         android:layout_marginBottom="16dp"
         android:src="@drawable/baseline_alarm_add_24"
         android:contentDescription="@string/app_name"
+        app:backgroundTint="@color/primary"
+        app:tint="@color/accent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/glMarginEnd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

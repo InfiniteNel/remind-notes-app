@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextTitle1">
+    <style name="TextStyle">
+        <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="TextTitle1" parent="TextStyle">
         <item name="android:textSize">40sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TextTitle2">
+    <style name="TextTitle2" parent="TextStyle">
         <item name="android:textSize">32sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TextTitle3">
+    <style name="TextTitle3" parent="TextStyle">
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextSubtitle1">
+    <style name="TextSubtitle1" parent="TextStyle">
         <item name="android:textSize">24sp</item>
         <item name="android:textStyle">italic</item>
     </style>
-    <style name="TextSubtitle2">
+    <style name="TextSubtitle2" parent="TextStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">italic</item>
     </style>
-    <style name="TextSubtitle3">
+    <style name="TextSubtitle3" parent="TextStyle">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">italic</item>
     </style>
 
-    <style name="TextBody1">
+    <style name="TextBody1" parent="TextStyle">
         <item name="android:textSize">24sp</item>
     </style>
-    <style name="TextBody2">
+    <style name="TextBody2" parent="TextStyle">
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="TextBody3">
+    <style name="TextBody3" parent="TextStyle">
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="TexListItemTitle">
+    <style name="TexListItemTitle" parent="TextStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-    <style name="TexListItemSubtitle">
+    <style name="TexListItemSubtitle" parent="TextStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">italic</item>
     </style>
-    <style name="TexListItemBody">
+    <style name="TexListItemBody" parent="TextStyle">
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="TextTimeBody">
+    <style name="TextTimeBody" parent="TextStyle">
         <item name="android:textSize">32sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:text">@string/timeDefaultText</item>
     </style>
-    <style name="TextDateBody">
+    <style name="TextDateBody" parent="TextStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">italic</item>
         <item name="android:text">@string/dateDefaultText</item>
@@ -62,7 +66,6 @@
     <style name="StyleButtonPrimary" parent="TextBody2">
         <item name="android:stateListAnimator">@null</item>
         <item name="android:background">@drawable/selector_button_primary</item>
-        <item name="android:textColor">@color/color_button_text</item>
         <item name="android:elevation">0dp</item>
         <item name="android:textAllCaps">false</item>
         <item name="backgroundTint">@null</item>
@@ -71,7 +74,6 @@
     <style name="StyleButtonSecondary" parent="TextBody2">
         <item name="android:stateListAnimator">@null</item>
         <item name="android:background">@drawable/selector_button_secondary</item>
-        <item name="android:textColor">@color/color_button_text</item>
         <item name="android:elevation">0dp</item>
         <item name="android:textAllCaps">false</item>
         <item name="backgroundTint">@null</item>
@@ -94,5 +96,11 @@
         <item name="android:layout_margin">6dp</item>
         <item name="android:gravity">center</item>
         <item name="android:button">@android:color/transparent</item>
+    </style>
+    
+    <style name="PickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/primary</item>
+        <item name="android:colorControlActivated">@color/accent</item>
+        <item name="android:background">@color/primary</item>
     </style>
 </resources>
