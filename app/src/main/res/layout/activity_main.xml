@@ -51,6 +51,7 @@
         android:background="@color/secondary"
         app:itemBackground="@drawable/selector_navigationview_item"
         app:itemTextColor="@color/accent"
+        app:headerLayout="@layout/view_header"
         app:menu="@menu/main_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
