@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_note"
+            android:icon="@drawable/baseline_note_add_24"
             android:title="@string/menuNavNote" />
 
         <item
             android:id="@+id/nav_reminder"
+            android:icon="@drawable/baseline_alarm_add_24"
             android:title="@string/menuNavReminder" />
 
         <item
             android:id="@+id/nav_tasklist"
+            android:icon="@drawable/baseline_playlist_add_24"
             android:title="@string/menuNavTasklist" />
+
+        <item
+            android:id="@+id/menu_separator"
+            android:title=""
+            android:enabled="false"
+            app:showAsAction="never" />
     </group>
 
     <group android:checkableBehavior="single">
-        <item android:title="@string/menuDividerTask">
-            <menu>
-                <item
-                    android:id="@+id/nav_myday"
-                    android:title="@string/menuNavMyday" />
+        <item
+            android:id="@+id/nav_myday"
+            android:icon="@drawable/baseline_view_day_24"
+            android:title="@string/menuNavMyday" />
 
-                <item
-                    android:id="@+id/nav_myweek"
-                    android:title="@string/menuNavMyweek" />
-            </menu>
-        </item>
+        <item
+            android:id="@+id/nav_myweek"
+            android:icon="@drawable/baseline_view_week_24"
+            android:title="@string/menuNavMyweek" />
     </group>
-
 </menu>
