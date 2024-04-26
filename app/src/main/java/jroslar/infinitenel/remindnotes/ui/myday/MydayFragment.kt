@@ -136,6 +136,8 @@ class MydayFragment : Fragment() {
                         dialog.dismiss()
                     },
                     negativeAction = ManageRemindersDialog.Action(getString(R.string.dialogSaveReminderNegativeAction)) { dialog ->
+                        val c = Calendar.getInstance()
+                        viewModel.deleteReminder(dialog.reminder, getDateToday(c), getDateTomorrow(c))
                         dialog.dismiss()
                     }
                 ).show(requireActivity().supportFragmentManager, null)
