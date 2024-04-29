@@ -11,7 +11,7 @@ import android.view.ViewGroup
 import androidx.core.view.isGone
 import androidx.fragment.app.DialogFragment
 import jroslar.infinitenel.remindnotes.R
-import jroslar.infinitenel.remindnotes.core.DaysOfWeek
+import jroslar.infinitenel.remindnotes.core.utils.DaysOfWeek
 import jroslar.infinitenel.remindnotes.core.dialogs.DatePickerDialog
 import jroslar.infinitenel.remindnotes.core.dialogs.TimePickerDialog
 import jroslar.infinitenel.remindnotes.databinding.DialogManageRemindersBinding

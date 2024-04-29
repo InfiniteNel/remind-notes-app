@@ -1,6 +1,6 @@
 package jroslar.infinitenel.remindnotes.domain.model
 
-import jroslar.infinitenel.remindnotes.core.DaysOfWeek
+import jroslar.infinitenel.remindnotes.core.utils.DaysOfWeek
 import jroslar.infinitenel.remindnotes.data.database.entities.ReminderEntity
 
 data class ReminderModel(

@@ -1,4 +1,4 @@
-package jroslar.infinitenel.remindnotes.core
+package jroslar.infinitenel.remindnotes.core.utils
 
 import android.content.Context
 import jroslar.infinitenel.remindnotes.R

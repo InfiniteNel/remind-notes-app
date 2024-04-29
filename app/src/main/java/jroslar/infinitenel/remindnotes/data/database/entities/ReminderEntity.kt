@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
-import jroslar.infinitenel.remindnotes.core.DaysOfWeek
+import jroslar.infinitenel.remindnotes.core.utils.DaysOfWeek
 import jroslar.infinitenel.remindnotes.data.database.ConverterDaysOfWeek
 import jroslar.infinitenel.remindnotes.domain.model.ReminderModel
 

@@ -1,7 +1,7 @@
 package jroslar.infinitenel.remindnotes.data.database
 
 import androidx.room.TypeConverter
-import jroslar.infinitenel.remindnotes.core.DaysOfWeek
+import jroslar.infinitenel.remindnotes.core.utils.DaysOfWeek
 
 class ConverterDaysOfWeek {
     @TypeConverter
