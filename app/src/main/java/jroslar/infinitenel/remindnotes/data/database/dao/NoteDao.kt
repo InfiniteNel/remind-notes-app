@@ -14,7 +14,7 @@ interface NoteDao {
     @Query("SELECT * FROM note_table WHERE id = :id")
     suspend fun getNoteById(id: Int): NoteEntity
     @Query("SELECT * FROM note_table WHERE noteDay = :day")
-    suspend fun getNotesByDay(day: String): List<NoteEntity>
+    suspend fun getNotesByDay(day: Long): List<NoteEntity>
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertNote(noteEntity: NoteEntity)
     @Query("DELETE FROM note_table WHERE id = :id")

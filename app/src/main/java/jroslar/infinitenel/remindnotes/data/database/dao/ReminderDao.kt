@@ -12,7 +12,7 @@ interface ReminderDao {
     @Query("SELECT * FROM reminder_table ORDER BY remindDay ASC")
     suspend fun getAllReminders(): List<ReminderEntity>
     @Query("SELECT * FROM reminder_table WHERE remindDay = :day ORDER BY timeDay ASC")
-    suspend fun getRemindersByDay(day: String): List<ReminderEntity>
+    suspend fun getRemindersByDay(day: Long): List<ReminderEntity>
     @Query("SELECT * FROM reminder_table WHERE repeatDay LIKE '%' || :dayOfWeek || '%' ORDER BY timeDay ASC")
     suspend fun getRemindersByDayOfWeek(dayOfWeek: String): List<ReminderEntity>
     @Insert(onConflict = OnConflictStrategy.IGNORE)

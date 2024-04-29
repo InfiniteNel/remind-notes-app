@@ -33,7 +33,6 @@ class ManageRemindersDialog: DialogFragment() {
         val EmptyReminder = ReminderModel(
             title = "",
             description = "",
-            important = false,
             remindDay = "",
             repeatDay = emptyList(),
             timeDay = ""

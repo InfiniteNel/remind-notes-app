@@ -86,7 +86,6 @@ class ManageNoteFragment : Fragment(), MenuProvider {
         return NoteModel(
             title = binding.tvNoteTitle.text.toString(),
             description = binding.tvNoteDescription.text.toString(),
-            important = false,
             noteDay = binding.tvNoteDate.text.toString()
         )
     }

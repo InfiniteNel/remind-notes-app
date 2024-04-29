@@ -2,6 +2,7 @@ package jroslar.infinitenel.remindnotes.data.repository
 
 import android.os.Build
 import jroslar.infinitenel.remindnotes.core.Constant
+import jroslar.infinitenel.remindnotes.core.extensions.dateToMillisecondes
 import jroslar.infinitenel.remindnotes.data.database.dao.NoteDao
 import jroslar.infinitenel.remindnotes.data.database.dao.ReminderDao
 import jroslar.infinitenel.remindnotes.data.database.entities.toModelNote
@@ -20,8 +21,8 @@ class NotificationRepositoryImpl @Inject constructor(
     override suspend fun getListNotificationByDay(date: String): List<NotificationModel> {
         val result: MutableList<NotificationModel> = mutableListOf()
 
-        result.addAll(noteDao.getNotesByDay(date).map { it.toModelNote() })
-        result.addAll(reminderDao.getRemindersByDay(date).map { it.toModelReminder() })
+        result.addAll(noteDao.getNotesByDay(date.dateToMillisecondes()).map { it.toModelNote() })
+        result.addAll(reminderDao.getRemindersByDay(date.dateToMillisecondes()).map { it.toModelReminder() })
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val formatter = DateTimeFormatter.ofPattern(Constant.FORMAT_DATE_OVER_API_26, Locale.getDefault())

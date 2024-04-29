@@ -8,7 +8,7 @@ import jroslar.infinitenel.remindnotes.data.database.dao.ReminderDao
 import jroslar.infinitenel.remindnotes.data.database.entities.NoteEntity
 import jroslar.infinitenel.remindnotes.data.database.entities.ReminderEntity
 
-@Database(entities = [NoteEntity::class, ReminderEntity::class], version = 2)
+@Database(entities = [NoteEntity::class, ReminderEntity::class], version = 3)
 @TypeConverters(ConverterDaysOfWeek::class)
 abstract class NotificationDatabase: RoomDatabase() {
     abstract fun getNoteDao(): NoteDao
