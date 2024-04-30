@@ -16,11 +16,6 @@
             android:title="@string/menuNavReminder" />
 
         <item
-            android:id="@+id/nav_tasklist"
-            android:icon="@drawable/baseline_playlist_add_24"
-            android:title="@string/menuNavTasklist" />
-
-        <item
             android:id="@+id/menu_separator"
             android:title=""
             android:enabled="false"

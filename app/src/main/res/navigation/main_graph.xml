@@ -37,11 +37,6 @@
         android:label="fragment_reminders"
         tools:layout="@layout/fragment_reminders" />
     <fragment
-        android:id="@+id/nav_tasklist"
-        android:name="jroslar.infinitenel.remindnotes.ui.tasklist.TaskListFragment"
-        android:label="fragment_task_list"
-        tools:layout="@layout/fragment_task_list" />
-    <fragment
         android:id="@+id/manageNoteFragment"
         android:name="jroslar.infinitenel.remindnotes.ui.managenote.ManageNoteFragment"
         android:label="fragment_manage_note"
