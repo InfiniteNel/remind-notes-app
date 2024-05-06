@@ -37,6 +37,23 @@ Pantalla que muestra todos los recordatorios de la aplicación.
 
 Pantalla que muestra todas las notas de la aplicación.
 
+### MyDay
+![MyDay](https://i.imgur.com/ICJUdK5.png)
+
+Pantalla que muestra los recordatorios y notas de este día, y del próximo día.
+
+### ManageReminder
+![ManageReminder](https://i.imgur.com/uZQaYnK.png)
+![ManageReminder](https://i.imgur.com/rmufnIL.png)
+
+Pantalla para crear o editar un recordatorio.
+
+### ManageNote
+![ManageNote](https://i.imgur.com/kDOARKp.png)
+![ManageNote](https://i.imgur.com/RFeWB9u.png)
+
+Pantalla para crear o editar una nota.
+
 ## Construido con 🛠️
 
 * [Kotlin](https://developer.android.com/kotlin/learn?hl=es-419) - Lenguaje de programación principal.
