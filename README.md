@@ -36,3 +36,19 @@ Pantalla que muestra todos los recordatorios de la aplicación.
 ![Notes](https://i.imgur.com/hS04zwo.png)
 
 Pantalla que muestra todas las notas de la aplicación.
+
+## Construido con 🛠️
+
+* [Kotlin](https://developer.android.com/kotlin/learn?hl=es-419) - Lenguaje de programación principal.
+
+### Tecnologías Utilizadas
+
+* [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview?hl=es-419) - Mostrar la lista de recordatorios y notas.
+* [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=es-419) y [StateFlow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow?hl=es-419) - Arquitectura de la aplicación.
+* [BroadcastReceiver](https://developer.android.com/reference/android/content/BroadcastReceiver) - Gestión de peticiones en segundo plano. 
+
+### Dependencias
+
+* [NavComponent](https://developer.android.com/guide/navigation/get-started?hl=es-419) y [SafeArgs](https://developer.android.com/guide/navigation/use-graph/safe-args?hl=es-419) - Navegación entre pantallas.
+* [Room](https://developer.android.com/training/data-storage/room?hl=es-419) - Almacenamiento y gestión de datos.
+* [DaggerHilt](https://developer.android.com/training/dependency-injection/hilt-android?hl=es-419) - Inyección de dependencias.
