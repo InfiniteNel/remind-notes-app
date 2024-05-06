@@ -19,3 +19,20 @@ git clone https://github.com/InfiniteNel/remind-notes-app.git
 2. Abre el proyecto en Android Studio.
 
 3. Construye y ejecuta la aplicación en tu dispositivo o emulador.
+
+## Pantallas 📲
+
+#### MainMenu
+![MainMenu](https://i.imgur.com/900WV8x.png)
+
+Menu principal de la aplicación.
+
+### Reminder
+![Reminder](https://i.imgur.com/KDqzj9X.png)
+
+Pantalla que muestra todos los recordatorios de la aplicación.
+
+### Notes
+![Notes](https://i.imgur.com/hS04zwo.png)
+
+Pantalla que muestra todas las notas de la aplicación.
