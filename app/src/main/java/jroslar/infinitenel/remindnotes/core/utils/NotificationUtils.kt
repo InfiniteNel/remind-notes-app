@@ -10,12 +10,10 @@ import jroslar.infinitenel.remindnotes.core.broadcastreceiver.ReminderNotificati
 object NotificationUtils {
     @SuppressLint("ScheduleExactAlarm")
     fun createScheduledNotification(
-        context: Context, date: Long, id: Int, title: String, description: String
+        context: Context, date: Long, id: Int
     ) {
         val intent = Intent(context, ReminderNotification::class.java)
         intent.putExtra(ReminderNotification.NOTIFICATION_ID, id)
-        intent.putExtra(ReminderNotification.NOTIFICATION_TITLE, title)
-        intent.putExtra(ReminderNotification.NOTIFICATION_DESCRIPTION, description)
 
         val pendingIntent = PendingIntent.getBroadcast(
             context,

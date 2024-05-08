@@ -18,9 +18,7 @@ class UpdateReminderUseCase @Inject constructor(
         NotificationUtils.createScheduledNotification(
             context,
             reminderModel.remindDay.dateToMillisecondes() + reminderModel.timeDay.timeToMillisecondes(),
-            reminderModel.id,
-            reminderModel.title,
-            reminderModel.description
+            reminderModel.id
         )
     }
 }
